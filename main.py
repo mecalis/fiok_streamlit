@@ -1,10 +1,11 @@
+import cv2
 import torch
 torch.classes.__path__ = []
 
 from ultralytics import YOLO
 import base64
 import os
-import cv2
+
 import numpy as np
 
 
