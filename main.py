@@ -3,6 +3,8 @@ import base64
 import os
 import cv2
 import numpy as np
+import torch
+torch.classes.__path__ = []
 
 import requests
 import streamlit as st
