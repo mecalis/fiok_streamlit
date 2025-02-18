@@ -110,7 +110,7 @@ if uploaded_image is not None:
         #st.write("Adatok a detekció után:")
 
         detected_data_slot.write(f"{text}")
-        detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}")
+        detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}. Megjegyzés: online szerveren kb ~1 sec, local szerveren ~300 ms. ")
 
 
 
