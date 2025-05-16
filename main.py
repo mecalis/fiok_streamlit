@@ -66,7 +66,7 @@ if uploaded_image is not None:
         clahe_img = clahe(image_bgr)
         pre_image = Image.fromarray(cv2.cvtColor(clahe_img, cv2.COLOR_BGR2RGB))
 
-        results = model.predict(source = pre_image, conf = 0.8, iou = 0.85)
+        results = model.predict(source = pre_image, conf = 0.7, iou = 0.85)
         #print("Predikciók")
         #print(results)
         lines = []
