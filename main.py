@@ -76,7 +76,7 @@ if uploaded_image is not None:
             for box in result.boxes:
 
                 x1, y1, x2, y2 = map(int, box.xyxy[0])  # Bounding box koordináták
-                if y1 > 200:
+                if y1 > 250:
                     continue
                 conf = box.conf[0].item()  # Konfidencia érték
                 cls = int(box.cls[0])  # Osztály index
