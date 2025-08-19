@@ -46,7 +46,7 @@ with st.expander("📌 Projekt célja"):
         kiváltására készült.
 
         - Előfeldolgozás: CLAHE (`clipLimit=3.0`, `tileGridSize=(8, 8)`)  
-        - Modell változat: **XS**  
+        - Modell változat: **XS** (`confidence=0.78`, `iou=0.2`) 
         - Tesztképek letöltésére és detektálás kipróbálására készült demo oldal.  
 
         A cél, hogy egy egyszerű, webes felületen lehessen kipróbálni a
@@ -149,6 +149,7 @@ if uploaded_image is not None:
 
         detected_data_slot.write(f"{text}")
         detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}. Általában <= ~100 ms. ")
+
 
 
 
