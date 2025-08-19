@@ -38,14 +38,16 @@ st.title("YOLO Object Detection")
 st.write("Előfeldolgozás: CLAHE (clipLimit=3.0, tileGridSize=(8, 8))")
 st.write("A modell: XS")
 st.write("Letölthető képek teszteléshez:")
-for label, path in files.items():
-    with open(path, "rb") as f:
-        st.download_button(
-            label=f"📥 {label}",
-            data=f,
-            file_name=os.path.basename(path),  # csak a fájlnév
-            mime="image/png"
-        )
+cols = st.columns(3)
+for col, (label, path) in zip(cols, files.items()):
+    with col:
+        with open(path, "rb") as f:
+            st.download_button(
+                label=f"📥 {label}",
+                data=f,
+                file_name=os.path.basename(path),
+                mime="image/png"
+            )
 # Feltöltött kép tárolása
 uploaded_image = st.file_uploader("Tölts fel egy képet", type=["jpg", "png", "jpeg"])
 
@@ -126,6 +128,7 @@ if uploaded_image is not None:
 
         detected_data_slot.write(f"{text}")
         detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}. Általában <= ~100 ms. ")
+
 
 
 
