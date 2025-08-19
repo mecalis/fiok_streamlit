@@ -26,12 +26,26 @@ def clahe(image):
 # Load a model
 model = YOLO("model.pt")
 
+files = {
+    "Kép 1": os.path.join("img3", "1.jpg"),
+    "Kép 2": os.path.join("img3", "2.jpg"),
+    "Kép 3": os.path.join("img3", "3.jpg")
+}
+
 # Alkalmazás cím
 st.set_page_config(page_title="YOLO Object Detection", page_icon="🔥")
 st.title("YOLO Object Detection")
 st.write("Előfeldolgozás: CLAHE (clipLimit=3.0, tileGridSize=(8, 8))")
 st.write("A modell: XS")
 st.write("Letölthető képek teszteléshez:")
+for label, path in files.items():
+    with open(path, "rb") as f:
+        st.download_button(
+            label=f"📥 {label}",
+            data=f,
+            file_name=os.path.basename(path),  # csak a fájlnév
+            mime="image/png"
+        )
 # Feltöltött kép tárolása
 uploaded_image = st.file_uploader("Tölts fel egy képet", type=["jpg", "png", "jpeg"])
 
@@ -112,6 +126,7 @@ if uploaded_image is not None:
 
         detected_data_slot.write(f"{text}")
         detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}. Általában <= ~100 ms. ")
+
 
 
 
