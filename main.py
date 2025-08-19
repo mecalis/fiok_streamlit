@@ -34,9 +34,9 @@ files = {
 
 # Alkalmazás cím
 st.set_page_config(page_title="YOLO Object Detection", page_icon="🔥")
-st.title("YOLO Object Detection")
+st.title("🤖YOLO Object Detection")
 st.write("Előfeldolgozás: CLAHE (clipLimit=3.0, tileGridSize=(8, 8))")
-st.write("A modell: XS")
+st.write("A betanított YOLO modell: XS")
 st.write("Letölthető képek teszteléshez:")
 cols = st.columns([1, 1, 1], gap="small")
 
@@ -50,7 +50,7 @@ for col, (label, path) in zip(cols, files.items()):
                 mime="image/png",
                 use_container_width=False  # fontos, hogy ne nyújtsa szét
             )
-# Itt add meg a GitHub repo-d URL-jét, ahol az img3 mappa van
+
 github_url = "https://github.com/mecalis/fiok_streamlit/tree/main/img3"
 st.markdown(f"[👉 Nyisd meg az img3 mappát a GitHubon az összes többi képért!]({github_url})")
 # Feltöltött kép tárolása
@@ -133,6 +133,7 @@ if uploaded_image is not None:
 
         detected_data_slot.write(f"{text}")
         detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}. Általában <= ~100 ms. ")
+
 
 
 
