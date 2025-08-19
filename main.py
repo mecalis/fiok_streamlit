@@ -32,6 +32,8 @@ files = {
     "Kép 3": os.path.join("img3", "3.jpg")
 }
 
+mosaic_path = os.path.join("img3", "mosaic.jpg")
+
 # Alkalmazás cím
 st.set_page_config(page_title="YOLO Object Detection", page_icon="🔥")
 st.title("🤖YOLO Object Detection")
@@ -53,6 +55,16 @@ with st.expander("📌 Projekt célja"):
         detektálási folyamatot és értékelni a modell pontosságát.
         """
     )
+with st.expander("Korábbi algoritmussal történő összehasonlítás"):
+    st.markdown(
+        """
+        A tesztelést ~1200 darab képen végeztem. Ebből a YOLO modell mindösszesen 1 darab
+        horizontális koordináta tengelyt nem talált meg. Az eredeti megoldás 26 képen ért el
+        bármely irányban 10 mm-nél nagyobb eltérést az OD eredményéhez képest. Minden esetben
+        az eredti script tévedett.
+        """
+    )
+    st.image(mosaic_path, caption="Összehasonlító mozaik", use_column_width=True)
 st.write("Letölthető képek teszteléshez:")
 cols = st.columns([1, 1, 1], gap="small")
 
@@ -149,6 +161,7 @@ if uploaded_image is not None:
 
         detected_data_slot.write(f"{text}")
         detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}. Általában <= ~100 ms. ")
+
 
 
 
