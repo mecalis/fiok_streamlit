@@ -66,7 +66,7 @@ with st.expander("🔍Korábbi algoritmussal történő összehasonlítás"):
         A megjelenített koordináta rendszerek:
         - Zöld: a kép középvonalai (sokszor kitakarja a piros vonal)
         - Kék YOLO modell eredménye
-        - Piros: eredeti script eredménye
+        - Piros: eredeti script eredménye (feldolgozási hiba esetén 0 offset a középvonalhoz képest)
         """
     )
     st.image(mosaic_path, caption="Összehasonlító mozaik", use_container_width=True)
@@ -166,6 +166,7 @@ if uploaded_image is not None:
 
         detected_data_slot.write(f"{text}")
         detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}. Általában <= ~100 ms. ")
+
 
 
 
