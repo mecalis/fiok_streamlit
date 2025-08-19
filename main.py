@@ -55,7 +55,7 @@ with st.expander("📌 Projekt célja"):
         detektálási folyamatot és értékelni a modell pontosságát.
         """
     )
-with st.expander("Korábbi algoritmussal történő összehasonlítás"):
+with st.expander("🔍Korábbi algoritmussal történő összehasonlítás"):
     st.markdown(
         """
         A tesztelést ~1200 darab képen végeztem. Ebből a YOLO modell mindösszesen 1 darab
@@ -166,6 +166,7 @@ if uploaded_image is not None:
 
         detected_data_slot.write(f"{text}")
         detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}. Általában <= ~100 ms. ")
+
 
 
 
