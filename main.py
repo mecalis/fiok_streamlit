@@ -40,11 +40,11 @@ st.title("🤖YOLO Object Detection")
 with st.expander("📌 Projekt célja"):
     st.markdown(
         """
-        Ez a projekt célja, hogy bemutassa a **YOLO Object Detection** modell működését 
+        Ennek a projekt az a célja, hogy bemutassa a **YOLO Object Detection** modell működését 
         különböző tesztképeken. A modell a Logisztikai Központban lévő automata
         raktárrobotok fejlesztéséhez készült.
         Az automata rendszer összes hibáinak 20%-a a kamerás fiókelőlap keresésnél, 10%-a az
-        akasztókeresésnél jelentkezik. Ez a projekt a jelenlegi, pixel számolós algoritmus
+        akasztókeresésnél jelentkezik. Ez a megoldás a jelenlegi, pixel számolós algoritmus
         kiváltására készült.
 
         - Előfeldolgozás: CLAHE (`clipLimit=3.0`, `tileGridSize=(8, 8)`)  
@@ -166,6 +166,7 @@ if uploaded_image is not None:
 
         detected_data_slot.write(f"{text}")
         detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}. Általában <= ~100 ms. ")
+
 
 
 
