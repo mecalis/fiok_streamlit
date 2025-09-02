@@ -67,6 +67,9 @@ with st.expander("🔍Korábbi algoritmussal történő összehasonlítás"):
         - Zöld: a kép középvonalai (sokszor kitakarja a piros vonal)
         - Kék YOLO modell eredménye
         - Piros: eredeti script eredménye (feldolgozási hiba esetén 0 offset a középvonalhoz képest)
+
+        Az OD algoritmus további, nem elhanyagolható hozadéka, hogy olyan képeken is képes eredményt számolni, hogy egymás mellet kettő "faceplate"
+        is található. A korábbi megoldás ezt nem tudta kezelni. Az 1-es letölthető képen ezt helyzetet lehet tesztelni.
         """
     )
     st.image(mosaic_path, caption="Összehasonlító mozaik", use_container_width=True)
@@ -166,6 +169,7 @@ if uploaded_image is not None:
 
         detected_data_slot.write(f"{text}")
         detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}. Általában <= ~100 ms. ")
+
 
 
 
