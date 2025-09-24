@@ -33,6 +33,7 @@ files = {
 }
 
 mosaic_path = os.path.join("img3", "mosaic.jpg")
+val_batch_path = os.path.join("img3", "val_batch1_pred.jpg")
 
 # Alkalmazás cím
 st.set_page_config(page_title="YOLO Object Detection", page_icon="🔥")
@@ -73,6 +74,10 @@ with st.expander("🔍Korábbi algoritmussal történő összehasonlítás"):
         """
     )
     st.image(mosaic_path, caption="Összehasonlító mozaik", use_container_width=True)
+
+with st.expander("🔍Példa mozaik kép a betanítás folyamatából."):
+    
+    st.image(val_batch_path, caption="Betanítási mozaik", use_container_width=True)
 st.write("Letölthető képek teszteléshez:")
 cols = st.columns([1, 1, 1], gap="small")
 
@@ -169,6 +174,7 @@ if uploaded_image is not None:
 
         detected_data_slot.write(f"{text}")
         detected_speed_slot.write(f"Sebességek [ms]: {results[0].speed}. Általában <= ~100 ms. ")
+
 
 
 
