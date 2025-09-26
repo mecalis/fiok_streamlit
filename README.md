@@ -1,6 +1,5 @@
-# fiok_streamlit
-Az alábbi script a loader_yolo projekt demonstrálására lett létrehozva.
-A Logisztikai Központban automata raktárrobotok tárolják ki és be a termékeket, melynek precíz működését egy kamerás rendszer segíti. A korábbi hagyományos élkereséssel megoldott script olyan mennyiségű hibával dolgozott, hogy egyéb megoldás kellett keresni. A YOLO Object Detection modelje megfelelő teljesítménnyel és jó pontossággal futtatható egy Raspberry PI egységen.
-Az alábbi teszt weboldal ( [ELŐLAP kereső demo oldal](https://fiokapp.streamlit.app/) ) a projektben részvevő egyébb szereplők számára készült, hogy megmutathassan a model képességeit.
+# Streamlit demo page
+The following script was created to demonstrate the loader_yolo project. In the Logistics Center, automated warehouse robots handle the storage and retrieval of products, and their precise operation is supported by a camera system. The previous script, which relied on traditional edge-detection methods, produced too many errors, necessitating an alternative solution. The YOLO Object Detection model can run on a Raspberry Pi unit with adequate performance and good accuracy.
+The following test website ( [ELŐLAP kereső demo oldal](https://fiokapp.streamlit.app/) ) was created for the other stakeholders in the project to showcase the capabilities of the model.
 
-A projekhez tartozó összes kód és leírás az alábbi github repo-ban található: [Loader YOLO projekt](https://github.com/mecalis/loader_yolo)
+All the code and documentation related to the project can be found in the following GitHub repository: [Loader YOLO projekt](https://github.com/mecalis/loader_yolo)
