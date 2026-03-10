@@ -1,4 +1,5 @@
-opencv-python-headless
+opencv-python-headless==4.10.0.84
+--no-deps
 numpy==2.1.1
 altair==5.5.0
 attrs==25.1.0
@@ -62,3 +63,4 @@ ultralytics==8.3.76
 ultralytics-thop==2.0.14
 urllib3==2.3.0
 watchdog==6.0.0
+
